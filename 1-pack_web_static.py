@@ -2,6 +2,7 @@
 """
 sets up your web servers for the deployment of web_static
 """
+
 from fabric.api import local
 import time
 from datetime import date
