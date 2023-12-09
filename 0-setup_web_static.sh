@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Bash script
+#Bash script for web deploy
 
 sudo apt-get update
 sudo apt-get -y install nginx
