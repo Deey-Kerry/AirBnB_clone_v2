@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""importing Flask to run the web app"""
+"""
+Importing Flask to run
+"""
 from flask import Flask, render_template
 from models import storage
 from models.state import State
@@ -9,12 +11,12 @@ app = Flask("__name__")
 
 @app.teardown_appcontext
 def close(self):
-    """ Method to close the session"""
+    """function that closes the session"""
     storage.close()
 
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states():
-    """Displays a html page with states and cities"""
+    """Represents a html page with states and cities"""
     state = storage.all(State)
     cities = storage.all(City)
     return render_template(

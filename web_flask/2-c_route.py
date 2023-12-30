@@ -12,15 +12,15 @@ def route_hello():
     """Return a given string"""
     return ("Hello HBNB!")
 
-@app.route('/hbnb/', strict_slashes=False)
+@app.route('/hbnb', strict_slashes=False)
 def route_hbnb():
     """Return a given string"""
     return ("HBNB")
 
 @app.route('/c/<text>', strict_slashes=False)
-def route_cText(text):
+def route_cisfun(text):
     """Display C followed by the value of the text variable"""
     return "C {}".format(text.replace("_", " "))
 
-if __name__ == "__main__"
-app.run(host="0.0.0.0", post=5000, debug=None)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=None)
