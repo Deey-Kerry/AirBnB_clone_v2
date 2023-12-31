@@ -8,37 +8,42 @@ from flask import Flask
 app = Flask("__name__")
 
 def format_text(text):
-    """reps underscores with space"""
+    """Displays a format text"""
     return text.replace("_", " ")
+
 
 @app.route('/', strict_slashes=False)
 def hello():
     """Return a string"""
     return ("Hello HBNB!")
 
-@app.route('/hbnb', strict_slashes=False)
+
+@app.route("/hbnb", strict_slashes=False)
 def hbnb():
-    """Return a string"""
+    """Returns a string"""
     return ("HBNB")
+
 
 @app.route("/c/<text>", strict_slashes=False)
 def cText(text):
-    """
-    Displays C followed by the value of the text
-    """
+    """display C text variable"""
     return "C {}".format(format_text(text))
+
 
 @app.route('/python', strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python_Text(text="is cool"):
-    """Displays a Python the valus of the text variable"""
+    """display Python text variable
+    """
     return "Python {}".format(format_text(text))
+
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def isNumber(n):
-    """display "n is number" """
+    """displays a number"""
     if isinstance(n, int):
         return "{} is a number".format(n)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=None)
