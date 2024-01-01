@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Updating this module"""
-
+"""
+Module that instantiates an instance of the Storage
+"""
 import os
 
 storage_type = os.getenv('HBNB_TYPE_STORAGE')
